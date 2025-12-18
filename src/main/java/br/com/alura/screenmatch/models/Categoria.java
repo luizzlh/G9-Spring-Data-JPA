@@ -9,8 +9,8 @@ public enum Categoria {
 
     private String categoriaOmdb;
 
-    Categoria(String caregoriaOmdb){
-        this.categoriaOmdb = caregoriaOmdb;
+    Categoria(String categoriaOmdb){
+        this.categoriaOmdb = categoriaOmdb;
     }
 
     public static Categoria fromString(String text){
