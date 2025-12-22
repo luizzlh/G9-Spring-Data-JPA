@@ -76,7 +76,7 @@ public class Principal {
 
     private void buscarEpisodioPorSerie(){
         listarSeriesBuscadas();
-        System.out.println("Escolha uma Série pelo nome: ");
+        System.out.print("Escolha uma Série pelo nome: ");
         var nomeSerie = leitura.nextLine();
         Optional<Serie> serie = series.stream()
                 .filter(s -> s.getTitulo().toLowerCase().contains(nomeSerie.toLowerCase()))
@@ -98,6 +98,7 @@ public class Principal {
                             .map(dadosEpisodio -> new Episodio(dadosTemporada.numero(), dadosEpisodio)))
                     .collect(Collectors.toList());
             serieEncontrada.setEpisodios(episodios);
+            repositorio.save(serieEncontrada);
         }else{
             System.out.println("Serie não encontrada!");
         }
